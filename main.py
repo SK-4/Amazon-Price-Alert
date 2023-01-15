@@ -19,9 +19,9 @@ print(product_price)
 
 title = soup.find(id="productTitle").get_text().strip()
 print(title)
-BUY_PRICE = 800
-my_email = "sk2587359@gmail.com"
-password =  "rockybhai7"
+BUY_PRICE = 'The price you wish to buy that product at'
+my_email = "your_email_address"
+my_password =  "your_password"
 
 if product_price < BUY_PRICE:
     message = f"{title} is now cheaper {product_price}, go buy it here :{PRODUCT_URL}"
@@ -31,8 +31,6 @@ if product_price < BUY_PRICE:
         result = connection.login(my_email, password)
         connection.sendmail(
             from_addr=my_email,
-            to_addrs="kshirsagarsoham1@gmail.com",
+            to_addrs="recievers_address",
             msg=f"Subject:Amazon Price Alert!\n\n{message}"
         )
-
-print("You Did It!!!")
